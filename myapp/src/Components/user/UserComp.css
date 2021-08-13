@@ -1,0 +1,25 @@
+.greenborder {
+    border: solid;
+    border-color: green;
+    margin: 25px;
+}
+
+.redborder {
+    border: solid;
+    border-color: red;
+    margin: 25px;
+}
+
+.isShowed {
+    /* visibility: visible; */
+    display: inline;
+}
+
+.isHidden {
+    /* visibility: hidden; */
+    display: none;
+}
+
+.leftside {
+    position: right;
+}
