@@ -6,9 +6,15 @@ export default class CardComp extends Component {
     this.state = {completed: 'not yet'}
   }
 
+  componentDidMount(){
+    if(this.props.completed){
+      this.setState({completed: "Yess!"})
+    }
+  }
+
   sendComleted = () => {
     this.props.completedTodo(this.props.userId, this.props.id,this.props.title);
-    this.setState = {completed: "Yes!!"}
+    this.setState({completed: "Yess!"})
   };
 
   render() {
@@ -18,12 +24,11 @@ export default class CardComp extends Component {
     } else {
       butoonStyle = "inline";
     }
-    console.log(this.props.userId,this.props.completed)
 
     return (
       <div style={{ border: "solid", borderColor: "purple", margin: "25px" }}>
        <strong> Title:</strong> {this.props.title} <br />
-       <strong> Comleted:</strong> {this.state.completed}
+       <strong> Completed:</strong> {this.state.completed}
         <br />
         <input
           onClick={this.sendComleted}
