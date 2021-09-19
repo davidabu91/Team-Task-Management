@@ -41,8 +41,6 @@ export default class App extends Component {
   }
 
   deletUser = (id) => {
-    debugger
-    console.log('Delet')
     let users = this.state.users.filter((x) => x.id != id);
     let todos = this.state.todos.filter((x) => x.userId != id);
     let posts = this.state.posts.filter((x) => x.userId != id);
@@ -97,10 +95,6 @@ export default class App extends Component {
     this.setState({ openTodos: id, displayTodoPost: true, displyAddUser: false });
   };
 
-  // updatetodos = (userId, todoId) => {
-  //   let tempTodos = this.state.todos;
-  //   let newTodo = { userId: userId, id: todoId, title: tempTodos };
-  // };
 
   completedTodo = (userId, id, title) => {
     let tempcurrent = this.state.currentTodos;
@@ -155,12 +149,11 @@ export default class App extends Component {
   };
 
   censelAddUser = () => this.setState({displyAddUser: false})
-y
+
   render() {
     let users = this.state.users
       .map((item) => {
         let completed = this.state.allIdsCompleted.includes(item.id);
-        console.log(completed + ":todos", "user id:" + item.id);
 
         return {
           name: item.name,
@@ -194,10 +187,10 @@ y
 
     return (
       <div>
-        <table style={{ width: "100%" }}>
+        <table >
           <tr>
             <td style={{ width: "50%", verticalAlign: "top" }}>
-              <h3> Reat - Final Project </h3>
+              <h3> Team Task Manamement </h3>
 
               <input
                 style={{

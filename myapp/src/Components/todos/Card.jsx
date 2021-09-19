@@ -8,6 +8,7 @@ export default class CardComp extends Component {
 
   sendComleted = () => {
     this.props.completedTodo(this.props.userId, this.props.id,this.props.title);
+    this.setState = {completed: "Yes!!"}
   };
 
   render() {
